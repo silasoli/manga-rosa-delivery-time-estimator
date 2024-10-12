@@ -15,8 +15,8 @@ public class InOrderTraversal<T extends Comparable<T>> implements TreeTraversal<
         if (node == null) {
             return;
         }
-        inOrder(node.getLeftChild(), result);  // Visita a subárvore esquerda
-        result.add(node.getValue());  // Processa o nó
-        inOrder(node.getRightChild(), result); // Visita a subárvore direita
+        inOrder(node.getLeftChild(), result); 
+        result.add(node.getValue());  
+        inOrder(node.getRightChild(), result); 
     }
 }

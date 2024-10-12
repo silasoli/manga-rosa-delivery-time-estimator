@@ -15,8 +15,8 @@ public class PreOrderTraversal<T extends Comparable<T>> implements TreeTraversal
         if (node == null) {
             return;
         }
-        result.add(node.getValue());  // Processa o nó
-        preOrder(node.getLeftChild(), result);  // Visita a subárvore esquerda
-        preOrder(node.getRightChild(), result); // Visita a subárvore direita
+        result.add(node.getValue());  
+        preOrder(node.getLeftChild(), result);  
+        preOrder(node.getRightChild(), result);
     }
 }

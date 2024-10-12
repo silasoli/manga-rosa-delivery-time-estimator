@@ -15,8 +15,8 @@ public class PostOrderTraversal<T extends Comparable<T>> implements TreeTraversa
         if (node == null) {
             return;
         }
-        postOrder(node.getLeftChild(), result);  // Visita a subárvore esquerda
-        postOrder(node.getRightChild(), result); // Visita a subárvore direita
-        result.add(node.getValue());  // Processa o nó
+        postOrder(node.getLeftChild(), result); 
+        postOrder(node.getRightChild(), result); 
+        result.add(node.getValue());  
     }
 }

@@ -9,9 +9,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    // Menu interativo para testar as funcionalidades do sistema
     public static void main(String[] args) {
-        // Exibe a árvore em ASCII ao iniciar o programa
         displayTreeImage();
 
         Scanner scanner = new Scanner(System.in);
@@ -68,7 +66,6 @@ public class Main {
         scanner.close();
     }
 
-    // Exibe uma "imagem" de árvore em ASCII com uma mensagem de boas-vindas
     private static void displayTreeImage() {
         System.out.println("\n"
                 + "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀\n"
@@ -95,7 +92,6 @@ public class Main {
         );
     }
 
-    // Exibe o menu ao usuário
     private static void displayMenu() {
         System.out.println("\n========== Menu ==========");
         System.out.println("1. Inserir uma regra");
@@ -110,7 +106,6 @@ public class Main {
         System.out.println("==========================");
     }
 
-    // Obter uma opção válida do usuário
     private static int getValidOption(Scanner scanner) {
         int option = -1;
         try {
@@ -118,12 +113,11 @@ public class Main {
             option = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("Erro: Por favor, insira um número válido.");
-            scanner.nextLine();  // Limpa o buffer do scanner
+            scanner.nextLine();
         }
         return option;
     }
 
-    // Adiciona uma regra à árvore
     private static void addRule(Scanner scanner, BinarySearchTree<Rule> tree) {
         try {
             System.out.print("Digite o ID da regra a ser inserida: ");
@@ -133,11 +127,10 @@ public class Main {
             System.out.println("Regra com ID " + ruleId + " inserida.");
         } catch (InputMismatchException e) {
             System.out.println("Erro: Valor inválido. Por favor, insira um número inteiro.");
-            scanner.nextLine();  // Limpa o buffer do scanner
+            scanner.nextLine();  
         }
     }
 
-    // Remove uma regra da árvore
     private static void removeRule(Scanner scanner, BinarySearchTree<Rule> tree) {
         try {
             System.out.print("Digite o ID da regra a ser removida: ");
@@ -151,11 +144,10 @@ public class Main {
             }
         } catch (InputMismatchException e) {
             System.out.println("Erro: Valor inválido. Por favor, insira um número inteiro.");
-            scanner.nextLine();  // Limpa o buffer do scanner
+            scanner.nextLine(); 
         }
     }
 
-    // Verifica se uma regra está na árvore
     private static void checkRule(Scanner scanner, BinarySearchTree<Rule> tree) {
         try {
             System.out.print("Digite o ID da regra a ser verificada: ");
@@ -168,11 +160,10 @@ public class Main {
             }
         } catch (InputMismatchException e) {
             System.out.println("Erro: Valor inválido. Por favor, insira um número inteiro.");
-            scanner.nextLine();  // Limpa o buffer do scanner
+            scanner.nextLine(); 
         }
     }
 
-    // Verifica se a árvore está vazia
     private static void checkIfEmpty(BinarySearchTree<Rule> tree) {
         if (tree.isEmpty()) {
             System.out.println("A árvore está vazia.");
@@ -181,7 +172,6 @@ public class Main {
         }
     }
 
-    // Exibe a árvore em ordem
     private static void displayTreeInOrder(BinarySearchTree<Rule> tree) {
         System.out.println("Exibindo árvore (in-order):");
         InOrderTraversal<Rule> inOrderTraversal = new InOrderTraversal<>();
@@ -189,7 +179,6 @@ public class Main {
         System.out.println(inOrder);
     }
 
-    // Exibe a árvore em pré-ordem
     private static void displayTreePreOrder(BinarySearchTree<Rule> tree) {
         System.out.println("Exibindo árvore (pre-order):");
         PreOrderTraversal<Rule> preOrderTraversal = new PreOrderTraversal<>();
@@ -197,7 +186,6 @@ public class Main {
         System.out.println(preOrder);
     }
 
-    // Exibe a árvore em pós-ordem
     private static void displayTreePostOrder(BinarySearchTree<Rule> tree) {
         System.out.println("Exibindo árvore (post-order):");
         PostOrderTraversal<Rule> postOrderTraversal = new PostOrderTraversal<>();
@@ -205,7 +193,6 @@ public class Main {
         System.out.println(postOrder);
     }
 
-    // Limpa a árvore
     private static void clearTree(BinarySearchTree<Rule> tree) {
         tree.clear();
         System.out.println("A árvore foi limpa.");

@@ -46,12 +46,10 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
         } else if (value.compareTo(node.getValue()) > 0) {
             node.setRightChild(removeRecursive(node.getRightChild(), value));
         } else {
-            // Caso 1: Nó folha
             if (node.getLeftChild() == null && node.getRightChild() == null) {
                 return null;
             }
 
-            // Caso 2: Um filho
             if (node.getLeftChild() == null) {
                 return node.getRightChild();
             }
@@ -60,8 +58,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
                 return node.getLeftChild();
             }
 
-            // Caso 3: Dois filhos
-            // Substituir pelo menor valor da subárvore direita
             T smallestValue = findSmallestValue(node.getRightChild());
             node.setValue(smallestValue);
             node.setRightChild(removeRecursive(node.getRightChild(), smallestValue));
